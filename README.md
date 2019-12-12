@@ -1,6 +1,9 @@
 # arduino-midi-touchpad
 An arduino based touchpad MIDI over USB device
+
 Author : Nicolas Debras ([nicolas@debras.fr](email))
+
+![Arduino MIDI Touchpad](https://raw.githubusercontent.com/ndebras/arduino-midi-touchpad/master/documentation/images/arduino_midi_touchpad.jpg)
 
 This is a touchpad sketch turning an Arduino UNO and a Adafruit 2.8'' TFT Touchscreen into a  MIDI device able to send  control change message over USB.
   
@@ -38,11 +41,16 @@ You need to know is that, once the USB controler of the Arduino will be acting a
 
 ### Flashing the USB controler to MIDI
 
+![Arduino AVR ISP Flash](https://raw.githubusercontent.com/ndebras/arduino-midi-touchpad/master/documentation/images/arduino_avr_isp_flash.jpg)
+
 What we wanna do know is to get the USB microcontroler code the will make it act as a MIDI class compliant controler. To do that git clone this repository : [https://github.com/ddiakopoulos/hiduino](url)
 The go in the `hiduino/compiled_firmwares` directory.
 Find out to which USB port your AVR ISP Programmer is plugged to. On MacOS, just have a look at the /dev/ directory with `ls /dev/`. In my case, it is `/dev/cu.SLAB_USBtoUART`. So, adapt the -P argument and execute the following command in the terminal :  
 
 `avrdude -p at90usb82 -F -P /dev/cu.SLAB_USBtoUART -c avrispmkii -U flash:w:arduino_midi.hex -U lfuse:w:0xFF:m -U hfuse:w:0xD9:m -U efuse:w:0xF4:m -U lock:w:0x0F:m`
+
+Your Arduino should now be recognized as a MIDI device by computer. 
+![Arduino as a MIDI USB Device](https://raw.githubusercontent.com/ndebras/arduino-midi-touchpad/master/documentation/images/arduino_midi_device_macos.jpg)
 
 ### Revert to USB controler to it's original state
 
@@ -53,4 +61,4 @@ To revert the USB microcontroler of your Arduino UNO R3 back to the original, ad
 
 ## 3D Printing the case (Optional)
 
-To do.
+(To do)
