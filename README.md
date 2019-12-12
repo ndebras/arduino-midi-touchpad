@@ -3,6 +3,8 @@ An arduino based touchpad MIDI over USB device
 
 Author : Nicolas Debras ([nicolas@debras.fr](email))
 
+Demo video : [https://www.youtube.com/watch?v=MqDizxunnVw](url)
+
 ![Arduino MIDI Touchpad](https://raw.githubusercontent.com/ndebras/arduino-midi-touchpad/master/documentation/images/arduino_midi_touchpad.jpg)
 
 This is a touchpad sketch turning an Arduino UNO and a Adafruit 2.8'' TFT Touchscreen into a  MIDI device able to send  control change message over USB.
