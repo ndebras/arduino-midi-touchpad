@@ -1,4 +1,4 @@
-# arduino-midi-touchpad
+# arduino-midi-touchpad UNO
 An arduino based touchpad MIDI over USB device
 
 Author : Nicolas Debras ([nicolas@debras.fr](email))
@@ -61,6 +61,7 @@ The original USB microcontroler code can be found in the Arduino IDE package. On
 To revert the USB microcontroler of your Arduino UNO R3 back to the original, adapt the -P argument and execute : 
 `avrdude -p at90usb82 -F -P /dev/cu.SLAB_USBtoUART -c avrispmkii -U flash:w:UNO-dfu_and_usbserial_combined.hex -U lfuse:w:0xFF:m -U hfuse:w:0xD9:m -U efuse:w:0xF4:m -U lock:w:0x0F:m`
 
-## 3D Printing the case (Optional)
+# arduino-midi-touchpad MEGA
 
-(To do)
+You'll find in the src directory, a version of the code in order to user the same TFT touchscreen with the arduino MEGA and with bluetooth capabilities.
+I'll document it soon.
